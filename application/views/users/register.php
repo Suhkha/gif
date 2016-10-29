@@ -9,34 +9,29 @@
 </head>
 <body>
 	<main class="container card">
-		<div class="card__right"></div>
+		<div class="card__right card__right--register"></div>
 		<div class="card__left">
 			<div class="card__info">
 				<span>Just upload</span>
 				<h1 class="card__title">Is your first time here?</h1>
-				<p class="card__description">Add your gifs, share them, make them whatever you want wherever you want.</p>
+				<p class="card__description">Add your gifs, share them, make them whatever you want, wherever you want.</p>
 			</div>
 
 			<div class="form">
 				<?php echo form_open('/register/save'); ?>
 					<div class="form-group">
-						<?php echo form_input(array('name'=>'nickname', 'id'=> 'nickname', 'placeholder'=>'Nickname', 'autocomplete' => 'off', 'class'=>'form-control form__input', 'value' => set_value('nickname'))); ?>
+						<?php echo form_input(array('name'=>'nickname', 'id'=> 'nickname', 'placeholder'=>'Nickname',  'class'=>'form-control form__input', 'value' => set_value('nickname'))); ?>
 						<?php echo form_error('nickname');?>
 					</div>
 
 					<div class="form-group">
-						<?php echo form_input(array('name'=>'email', 'id'=> 'email', 'placeholder'=>'Email', 'autocomplete' => 'off', 'class'=>'form-control form__input', 'value' => set_value('email'))); ?>
+						<?php echo form_input(array('name'=>'email', 'id'=> 'email', 'placeholder'=>'Email',  'class'=>'form-control form__input', 'value' => set_value('email'))); ?>
 						<?php echo form_error('email');?>
 					</div>
 
 					<div class="form-group">
-						<?php echo form_input(array('name'=>'password', 'id'=> 'password', 'placeholder'=>'Password', 'autocomplete' => 'off', 'type'=>'password', 'class'=>'form-control form__input', 'value' => set_value('password'))); ?>
+						<?php echo form_input(array('name'=>'password', 'id'=> 'password', 'placeholder'=>'Password',   'class'=>'form-control form__input', 'value' => set_value('password'))); ?>
 						<?php echo form_error('password');?>
-					</div>
-
-					<div class="form-group">
-						<?php echo form_input(array('name'=>'password_repeat', 'id'=> 'password', 'placeholder'=>'Repeat Password', 'autocomplete' => 'off', 'type'=>'password','class'=>'form-control form__input', 'value' => set_value('password_repeat'))); ?>
-						<?php echo form_error('password_repeat');?>
 					</div>
 
 					<?php echo form_submit(array('value'=>'Sign up', 'class'=>'form__button')); ?>
@@ -48,7 +43,7 @@
 							<p class="card__recommendation">Do you want to login to the site?</p>
 						</div>
 						<div class="col-md-4 col-sm-12 col-xs-12">
-							<?php echo anchor('login', 'Click here <i class="fa fa-arrow-right" aria-hidden="true"></i>', array('title' => 'The best news!', 'class' => 'card__link_login_email')); ?>
+							<?php echo anchor('login', 'Click here <i class="fa fa-arrow-right" aria-hidden="true"></i>', array('title' => 'Login now!', 'class' => 'card__link_login_email')); ?>
 						</div>
 					</div>
 				</div>

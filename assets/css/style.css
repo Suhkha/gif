@@ -59,10 +59,15 @@ body {
   font-size: 11px;
 }
 .card__right {
-  background-image: url("http://i.giphy.com/l46Chx5BwlBMFQq7S.gif");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+.card__right--register {
+  background-image: url("http://i.giphy.com/l46Chx5BwlBMFQq7S.gif");
+}
+.card__right--login {
+  background-image: url("http://i.giphy.com/l3vRafLglqVaZ7tZK.gif");
 }
 @media (max-width: 768px) {
   .card {
