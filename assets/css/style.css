@@ -1,0 +1,103 @@
+body {
+  background-color: #464b56;
+  min-height: 100%;
+  text-transform: uppercase;
+}
+.card {
+  background-color: #fff;
+  box-shadow: 5px 5px 30px #3e414c;
+  margin: 50px auto;
+  padding: 0;
+  position: relative;
+}
+.card__left {
+  padding: 50px;
+}
+.card__info > span {
+  color: #a7afbc;
+  font-weight: bold;
+}
+.card__title {
+  color: #464b56;
+  display: block;
+  line-height: 50px;
+}
+.card__description {
+  color: #a7afbc;
+  font-size: 12px;
+  line-height: 35px;
+}
+.form__input {
+  margin-top: 15px;
+  border-radius: 0;
+}
+.form p {
+  color: #ce0a1a;
+  font-size: 11px;
+  font-weight: 700;
+}
+.form__button {
+  padding: 10px 25px;
+  background: #3f5997;
+  color: #fff;
+  border: none;
+  float: right;
+}
+.card__footer {
+  margin-top: 75px;
+  text-align: center;
+}
+.card__footer .card__recommendation {
+  color: #464b56;
+  font-size: 11px;
+}
+.card__footer .card__link_login_email {
+  color: #9fc957;
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 11px;
+}
+.card__right {
+  background-image: url("http://i.giphy.com/l46Chx5BwlBMFQq7S.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media (max-width: 768px) {
+  .card {
+    margin: 50px 5px;
+  }
+  .card__left {
+    padding: 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .card__right {
+    position: relative;
+    height: 400px;
+    right: 0px;
+    top: 0px;
+  }
+  .card__left {
+    width: 100%;
+  }
+  .card__login span {
+    margin-left: 20px;
+  }
+}
+@media (min-width: 1025px) {
+  .card__right {
+    bottom: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 40%;
+  }
+  .card__left {
+    width: 60%;
+  }
+  .card__left .card__login span {
+    margin-left: 30px;
+  }
+}
