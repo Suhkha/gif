@@ -16,6 +16,19 @@ $config = array(
 			'label' => 'Password',
 			'rules' => 'required|trim|min_length[6]'
 			)
+		),
+
+	'login/login_user' => array(
+		array(
+			'field' => 'email',
+			'label' => 'Email',
+			'rules' => 'required|trim|valid_email'
+			),
+		array(
+			'field' => 'password',
+			'label' => 'Password',
+			'rules' => 'required|trim|min_length[6]'
+			),
 		)
 	);
 ?>

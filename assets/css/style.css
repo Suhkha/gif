@@ -3,12 +3,21 @@ body {
   min-height: 100%;
   text-transform: uppercase;
 }
+.custom-alert {
+  background: #ce0a1a;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 0;
+}
 .card {
   background-color: #fff;
   box-shadow: 5px 5px 30px #3e414c;
   margin: 50px auto;
   padding: 0;
   position: relative;
+  border: none !important;
 }
 .card__left {
   padding: 50px;

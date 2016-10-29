@@ -20,17 +20,17 @@
 			<div class="form">
 				<?php echo form_open('/register/save'); ?>
 					<div class="form-group">
-						<?php echo form_input(array('name'=>'nickname', 'id'=> 'nickname', 'placeholder'=>'Nickname',  'class'=>'form-control form__input', 'value' => set_value('nickname'))); ?>
+						<?php echo form_input(array('name'=>'nickname', 'id'=> 'nickname', 'placeholder'=>'Nickname', 'autocomplete' => 'off', 'class'=>'form-control form__input', 'value' => set_value('nickname'))); ?>
 						<?php echo form_error('nickname');?>
 					</div>
 
 					<div class="form-group">
-						<?php echo form_input(array('name'=>'email', 'id'=> 'email', 'placeholder'=>'Email',  'class'=>'form-control form__input', 'value' => set_value('email'))); ?>
+						<?php echo form_input(array('name'=>'email', 'id'=> 'email', 'placeholder'=>'Email', 'autocomplete' => 'off', 'class'=>'form-control form__input', 'value' => set_value('email'))); ?>
 						<?php echo form_error('email');?>
 					</div>
 
 					<div class="form-group">
-						<?php echo form_input(array('name'=>'password', 'id'=> 'password', 'placeholder'=>'Password',   'class'=>'form-control form__input', 'value' => set_value('password'))); ?>
+						<?php echo form_input(array('name'=>'password', 'id'=> 'password', 'placeholder'=>'Password', 'autocomplete' => 'off', 'type'=>'password', 'class'=>'form-control form__input', 'value' => set_value('password'))); ?>
 						<?php echo form_error('password');?>
 					</div>
 

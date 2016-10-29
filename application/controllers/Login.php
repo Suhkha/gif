@@ -8,4 +8,33 @@ class Login extends CI_Controller {
 		$this->load->view('login');
 	}
 
+	public function login_user(){
+		$this->load->library('form_validation');
+        
+		if($this->form_validation->run() === FALSE){
+			$this->load->view('login');
+			
+		}else{
+			$this->load->model('login_model');
+
+			//Validate correct data
+			$email = $this->input->post('email');
+			$password = $this->input->post('password');
+
+			if ($this->login_model->check_data($email, $password)) {
+
+				$user = $this->login_model->get_user_data($email);
+
+				$_SESSION['id']      = (int)$user->id;
+				$_SESSION['nickname']     = (string)$user->nickname;
+				$_SESSION['logged_in']    = (bool)true;
+				
+				$this->load->view('gifs/dashboard');
+			}else{
+				$this->data['alert'] = 'Are you sure you are registered on this site?';
+				$this->load->view('login',$this->data);
+			}
+
+		}
+	}
 }

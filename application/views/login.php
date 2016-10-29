@@ -10,6 +10,7 @@
 <body>
 	<main class="container card">
 		<div class="card__right card__right--login"></div>
+		<div class="custom-alert"><?php if (isset($alert)) : echo $alert; endif; ?></div>
 		<div class="card__left">
 			<div class="card__info">
 				<span>Collect many gifs</span>
