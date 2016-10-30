@@ -4,13 +4,15 @@
 	<meta charset="UTF-8">
 	<title>Register</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://gif.dev/assets/css/style.css">
 </head>
 <body>
 	<main class="container card">
 		<div class="card__right card__right--login"></div>
-		<div class="custom-alert"><?php if (isset($alert)) : echo $alert; endif; ?></div>
+		<?php if (isset($alert)) : ?>
+			<div class="custom-alert"><?php echo $alert; ?></div>
+		<?php  endif; ?>
 		<div class="card__left">
 			<div class="card__info">
 				<span>Collect many gifs</span>

@@ -18,22 +18,27 @@ class Login extends CI_Controller {
 			$this->load->model('login_model');
 
 			//Validate correct data
-			$email = $this->input->post('email');
-			$password = $this->input->post('password');
+			$email 		= $this->input->post('email');
+			$password 	= $this->input->post('password');
 
 			if ($this->login_model->check_data($email, $password)) {
 
 				$user = $this->login_model->get_user_data($email);
 
-				$_SESSION['id']      = (int)$user->id;
-				$_SESSION['nickname']     = (string)$user->nickname;
-				$_SESSION['logged_in']    = (bool)true;
+				$_SESSION['id']        = $user->id;
+				$_SESSION['nickname']  = $user->nickname;
+				$_SESSION['logged_in'] = true;
 				
 				$this->load->view('gifs/dashboard');
+
 			}else{
+
 				$this->data['alert'] = 'Are you sure you are registered on this site?';
 				$this->load->view('login',$this->data);
+				
 			}
+
+
 
 		}
 	}

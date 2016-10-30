@@ -9,13 +9,9 @@ class Login_Model extends CI_Model
 	{
 		parent::__construct();
 		$this->load->database();
+		
 	}
 
-
-	public function login_user(){
-		$this->email 	= $_POST['email'];
-		$this->password = password_hash($_POST['password'],PASSWORD_DEFAULT);
-	}
 
 	public function check_data($email, $password){
 		$this->db->select('password')->from('users')->where('email',$email);

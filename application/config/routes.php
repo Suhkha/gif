@@ -11,5 +11,9 @@ $route['translate_uri_dashes'] = FALSE;
 $route['register'] = 'register';
 $route['register/save'] = 'register/save';
 
-//-- Register
+//-- Login
 $route['login'] = 'login';
+
+//-- Gifs
+$route['gif'] = 'gif';
+$route['gif/save'] = 'gif/save';

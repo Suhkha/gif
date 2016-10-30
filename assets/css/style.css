@@ -3,6 +3,36 @@ body {
   min-height: 100%;
   text-transform: uppercase;
 }
+.logout {
+  float: right;
+  background: #9fc957;
+  padding: 16px;
+}
+.logout a,
+.logout a:hover {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 16px;
+}
+.logout:hover {
+  background: #7cab2c;
+}
+.gallery img {
+  margin-top: 15px;
+  width: 100%;
+}
+.gallery__image--activation {
+  background: #464b56;
+}
+.gallery__image--activation span {
+  color: #fff;
+  margin: 0 5px;
+}
+.gallery__image--activation input[type="checkbox"] {
+  float: right;
+  margin-right: 5px;
+}
 .custom-alert {
   background: #ce0a1a;
   color: #fff;
@@ -18,6 +48,7 @@ body {
   padding: 0;
   position: relative;
   border: none !important;
+  min-height: 200px;
 }
 .card__left {
   padding: 50px;
@@ -39,6 +70,27 @@ body {
 .form__input {
   margin-top: 15px;
   border-radius: 0;
+}
+.form__input--file {
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.form__input + label {
+  font-weight: 700;
+  color: #fff !important;
+  background: #ffec03 !important;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  margin: 200px auto 10px auto;
+  width: 100%;
+  font-size: 16px;
+}
+.form__input + label:hover {
+  background: #d6c603 !important;
 }
 .form p {
   color: #ce0a1a;
@@ -78,6 +130,10 @@ body {
 .card__right--login {
   background-image: url("http://i.giphy.com/l3vRafLglqVaZ7tZK.gif");
 }
+.card__right--upload {
+  padding: 15px;
+  border-left: dashed 2px #ffec03;
+}
 @media (max-width: 768px) {
   .card {
     margin: 50px 5px;
@@ -93,11 +149,21 @@ body {
     right: 0px;
     top: 0px;
   }
+  .card__right--upload {
+    height: 250px;
+    border-left: none;
+    border-bottom: dashed 2px #ffec03;
+  }
   .card__left {
     width: 100%;
   }
   .card__login span {
     margin-left: 20px;
+  }
+  .form__input--file,
+  .form__input + label {
+    margin: 50px auto 10px auto;
+    font-size: 20px;
   }
 }
 @media (min-width: 1025px) {
