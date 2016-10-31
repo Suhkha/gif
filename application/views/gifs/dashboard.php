@@ -1,4 +1,4 @@
-<?php if (isset($_SESSION['nickname']) && $_SESSION['logged_in'] === true) : ?>
+<?php if (isset($_SESSION['nickname']) && $_SESSION['logged_in'] === true) { ?>
 	<!DOCTYPE html>
 	<html lang="en">
 	<head>
@@ -11,12 +11,15 @@
 	<body>
 		<main class="container card">
 			<div class="card__right card__right--upload">
+			<?php if (isset($alert)) : ?>
+			<div class="custom-alert"><?php echo $alert; ?></div>
+			<?php  endif; ?>
 			<div class="logout">
-				<a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a>
+				<?php echo anchor('login/logout', '<i class="fa fa-sign-out" aria-hidden="true"></i> Log out', array('title' => 'Log out now!')); ?>
 			</div>
 				<form class="form" id="form--upload" enctype="multipart/form-data">
 					<div class="form-group" >
-						<input type="file" id="source" name="source" class="form-control form__input form__input--file" value="">
+						<input type="file" id="source" name="source" class="form-control form__input form__input--file">
 						<label for="source"><span id="fakepath"><i class="fa fa-upload" aria-hidden="true"></i> Choose a gif</span></label>
 					</div>
 					<button class="form__button form__button--upload">Upload</button>
@@ -29,63 +32,20 @@
 					<h3 class="card__title">Your collection, <?php echo $_SESSION['nickname']; ?>!</h3>
 
 					<div class="row grid" data-masonry='{"itemSelector": ".grid-item" }'>
-						<div class="gallery " >
-							<div class="col-md-6 col-xs-12 grid-item">
-								<img src="http://i.giphy.com/l41lLjlkX7SDfWb6w.gif" alt="">
-								<div class="gallery__image--activation">
-									<span>Check it</span><input type="checkbox">
+						<div class="gallery">
+							<?php 
+								foreach ($gifs as $gif): 
+									$path 	= $gif['source']; 
+									$id   	= $gif['id'];
+									$active = ($gif['active']) ? "checked='checked'" : "";
+							?>
+								<div class="col-md-6 col-xs-12 grid-item">
+									<img src="<?php echo base_url('assets/uploads/'.$path); ?>">
+									<div class="gallery__image--activation">
+										<span>Check it</span><input type="checkbox" name="id__gif[]" id="<?php echo $id; ?>" value="<?php echo $id; ?>" onclick="checkingGifs()" <?php echo $active; ?>>
+									</div>
 								</div>
-							</div>
-
-							<div class="col-md-6 col-xs-12 grid-item">
-								<img src="http://i.giphy.com/UrPaOzGwUUv7i.gif" class="img-responsive" alt="">
-								<div class="gallery__image--activation">
-									<span>Check it</span><input type="checkbox">
-								</div>
-							</div>
-
-							<div class="col-md-6 col-xs-12 grid-item">
-								<img src="http://i.giphy.com/26tP2G40l6t6xvgBO.gif" class="img-responsive" alt="">
-								<div class="gallery__image--activation">
-									<span>Check it</span><input type="checkbox">
-								</div>
-							</div>
-
-							<div class="col-md-6 col-xs-12 grid-item">
-								<img src="http://i.giphy.com/xTiTnD4d66fshHzTxK.gif" class="img-responsive" alt="">
-								<div class="gallery__image--activation">
-									<span>Check it</span><input type="checkbox">
-								</div>
-							</div>
-
-							<div class="col-md-6 col-xs-12 grid-item">
-								<img src="http://i.giphy.com/l3V0l3iimigD3zt1m.gif" class="img-responsive" alt="">
-								<div class="gallery__image--activation">
-									<span>Check it</span><input type="checkbox">
-								</div>
-							</div>
-
-							<div class="col-md-6 col-xs-12 grid-item">
-								<img src="http://i.giphy.com/3oEjHYuGvoCWdf631m.gif" class="img-responsive" alt="">
-								<div class="gallery__image--activation">
-									<span>Check it</span><input type="checkbox">
-								</div>
-							</div>
-
-							<div class="col-md-6 col-xs-12 grid-item">
-								<img src="https://media.giphy.com/media/l2YSshrX8TJejxJBK/source.gif" class="img-responsive" alt="">
-								<div class="gallery__image--activation">
-									<span>Check it</span><input type="checkbox">
-								</div>
-							</div>
-
-							<div class="col-md-6 col-xs-12 grid-item">
-								<img src="https://media.giphy.com/media/l0MYyhUkkGGKaGcIo/source.gif" class="img-responsive" alt="">
-								<div class="gallery__image--activation">
-									<span>Check it</span><input type="checkbox">
-								</div>
-							</div>
-
+							<?php endforeach; ?>
 						</div>
 					</div>
 				</div>
@@ -99,4 +59,4 @@
 				
 	</body>
 	</html>
-<?php endif; ?>
+<?php }else{ redirect('/login'); } ?>

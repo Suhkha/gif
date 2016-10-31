@@ -3,21 +3,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
-	public function index()
-	{
+	/*Muestra la vista de login*/
+	public function index(){
 		$this->load->view('login');
 	}
 
+	/*Permite la validación de datos de usuario 
+	y asignación de sesión de login en caso de ser exitoso*/
 	public function login_user(){
 		$this->load->library('form_validation');
-        
+
 		if($this->form_validation->run() === FALSE){
 			$this->load->view('login');
 			
 		}else{
 			$this->load->model('login_model');
 
-			//Validate correct data
+			//Validación del formulario
 			$email 		= $this->input->post('email');
 			$password 	= $this->input->post('password');
 
@@ -35,11 +37,14 @@ class Login extends CI_Controller {
 
 				$this->data['alert'] = 'Are you sure you are registered on this site?';
 				$this->load->view('login',$this->data);
-				
+			
 			}
-
-
-
 		}
+	}
+
+	//Da de baja la sesión de usuario
+	public function logout(){
+		session_unset();
+		redirect('/');
 	}
 }

@@ -3,14 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Register extends CI_Controller {
 
-	public function index()
-	{
+	/*Muestra el formulario de inicio de sesión*/
+	public function index(){
 		$this->load->view('users/register');
-	
 	}
 
-	public function save()
-	{
+	/*Se valida el formulario y se registra el usuario
+	en el modelo Register*/
+	public function save(){
 		$this->load->library('form_validation');
         
 		if($this->form_validation->run() === FALSE){
@@ -23,6 +23,5 @@ class Register extends CI_Controller {
 			$this->load->view('login');
 
 		}
-	
 	}
 }
