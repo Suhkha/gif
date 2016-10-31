@@ -23,6 +23,8 @@ source.onchange = function () {
   fakepath.innerHTML = fullname;
 };
 
+
+
 //Permite subir los gifs al servidor
 $("#form--upload").on('submit',(function(e){
   e.preventDefault();

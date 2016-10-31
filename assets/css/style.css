@@ -55,6 +55,15 @@ body {
   color: #fff;
   margin: 0 5px;
 }
+.share__on--pinterest {
+  color: #fff !important;
+  float: right !important;
+  margin-right: 15px !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  border: solid 1px;
+  padding: 0 5px;
+}
 .custom-alert {
   background: #ce0a1a;
   color: #fff;
@@ -101,6 +110,7 @@ body {
   overflow: hidden;
   position: absolute;
   z-index: -1;
+  margin-top: 270px;
 }
 .form__input + label {
   font-weight: 700;
@@ -237,6 +247,7 @@ body {
   overflow: hidden;
   position: absolute;
   z-index: -1;
+  margin-top: 270px !important;
 }
 .form__input + label {
   font-weight: 700;

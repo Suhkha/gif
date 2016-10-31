@@ -19,7 +19,7 @@
 			</div>
 				<form class="form" id="form--upload" enctype="multipart/form-data">
 					<div class="form-group" >
-						<input type="file" id="source" name="source" class="form-control form__input form__input--file">
+						<input type="file" id="source" name="source" class="form-control form__input form__input--file" accept="image/gif" required="required">
 						<label for="source"><span id="fakepath"><i class="fa fa-upload" aria-hidden="true"></i> Choose a gif</span></label>
 					</div>
 					<button class="form__button form__button--upload">Upload</button>

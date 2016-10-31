@@ -29,6 +29,13 @@
 									</a>
 									<div class="gallery__image--author">
 										<span>Uploaded by {{this.nickname}}</span>
+										<a href="https://www.pinterest.com/pin/create/button/"
+									   data-pin-do="buttonBookmark"
+									   data-pin-custom="true">
+									    <span class="share__on--pinterest">
+									    	Compartir <i class="fa fa-pinterest"></i>
+									    </span>
+									</a>
 									</div>
 							</div>
 						{{/api}}
@@ -53,5 +60,10 @@
 			  });
 			};
 		</script>
+		<script
+    type="text/javascript"
+    async defer
+    src="//assets.pinterest.com/js/pinit.js"
+></script>
 	</body>
 	</html>
