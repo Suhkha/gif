@@ -62,14 +62,5 @@ function checkingGifs() {
   });
 }
 
-//Abre el modal para visualizar los gifs
-if(jQuery().fancybox){
-  $(".gallery").fancybox({
-    openEffect  : 'none',
-    closeEffect : 'none'
-  });
-};
-
-
 
 

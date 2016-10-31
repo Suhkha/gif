@@ -5,12 +5,15 @@
 	<title>Register</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="http://gif.dev/assets/css/style.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css">
 </head>
 <body>
 	<main class="container card">
 		<div class="card__right card__right--register"></div>
 		<div class="card__left">
+			<div class="main__link">
+				<?php echo anchor('gallery', 'GIFs', array('title' => 'GIFs now')); ?>
+			</div>
 			<div class="card__info">
 				<span>Just upload</span>
 				<h1 class="card__title">Is your first time here?</h1>

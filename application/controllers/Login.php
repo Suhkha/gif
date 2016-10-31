@@ -31,7 +31,7 @@ class Login extends CI_Controller {
 				$_SESSION['nickname']  = $user->nickname;
 				$_SESSION['logged_in'] = true;
 				
-				$this->load->view('gifs/dashboard');
+				
 
 			}else{
 
@@ -39,6 +39,8 @@ class Login extends CI_Controller {
 				$this->load->view('login',$this->data);
 			
 			}
+
+			redirect('/gif');
 		}
 	}
 

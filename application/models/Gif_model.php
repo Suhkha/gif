@@ -21,7 +21,7 @@ class Gif_Model extends CI_Model {
     /*Extrae todos los gifs subidos
     y ordenados en descendete*/
     public function view(){
-      $this->db->from('gifs');
+      $this->db->from('gifs')->where('id_user', $_SESSION['id']);
       $this->db->order_by("id", "desc");
       $query = $this->db->get(); 
       return $query->result_array();

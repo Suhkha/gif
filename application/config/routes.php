@@ -18,3 +18,4 @@ $route['login'] = 'login';
 $route['gif'] = 'gif';
 $route['gif/partial_view'] = 'gif/partial_view';
 $route['gif/save'] = 'gif/save';
+$route['gallery'] = 'gif/gallery';

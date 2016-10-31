@@ -31,4 +31,10 @@ class Gif extends CI_Controller {
 	public function update(){
 		$data['query'] = $this->gif_model->update();
 	}
+
+	/*Muestra la galeria de gifs
+	fuera del admin*/
+	public function gallery(){
+		$this->load->view('gallery');
+	}
 }

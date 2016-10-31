@@ -6,7 +6,7 @@
 		<title>Dashboard</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" href="http://gif.dev/assets/css/style.css">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css">
 	</head>
 	<body>
 		<main class="container card">
@@ -15,7 +15,7 @@
 			<div class="custom-alert"><?php echo $alert; ?></div>
 			<?php  endif; ?>
 			<div class="logout">
-				<?php echo anchor('login/logout', '<i class="fa fa-sign-out" aria-hidden="true"></i> Log out', array('title' => 'Log out now!')); ?>
+				<?php echo anchor('login/logout', 'Log out', array('title' => 'Log out now!')); ?>
 			</div>
 				<form class="form" id="form--upload" enctype="multipart/form-data">
 					<div class="form-group" >
@@ -34,6 +34,7 @@
 					<div class="row grid" data-masonry='{"itemSelector": ".grid-item" }'>
 						<div class="gallery">
 							<?php 
+							if(isset($gifs)):
 								foreach ($gifs as $gif): 
 									$path 	= $gif['source']; 
 									$id   	= $gif['id'];
@@ -46,6 +47,7 @@
 									</div>
 								</div>
 							<?php endforeach; ?>
+						<?php endif; ?>
 						</div>
 					</div>
 				</div>
@@ -55,7 +57,7 @@
 		<script src="https://unpkg.com/masonry-layout@4.1.1/dist/masonry.pkgd.min.js"></script>
 		<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 		<script src="https://use.fontawesome.com/be7e763425.js"></script>
-		<script src="http://gif.dev/assets/js/main.js"></script>
+		<script src="<?php echo base_url(); ?>/assets/js/main.js"></script>
 				
 	</body>
 	</html>
