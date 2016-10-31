@@ -4,13 +4,19 @@
 	<meta charset="UTF-8">
 	<title>Register</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
-	<link rel="stylesheet" href="http://gif.dev/assets/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css">
 </head>
 <body>
 	<main class="container card">
 		<div class="card__right card__right--register"></div>
+		<?php if (isset($alert)) : ?>
+			<div class="custom-alert"><?php echo $alert; ?></div>
+		<?php  endif; ?>
 		<div class="card__left">
+			<div class="main__link">
+				<?php echo anchor('gallery', 'GIFs', array('title' => 'GIFs now')); ?>
+			</div>
 			<div class="card__info">
 				<span>Just upload</span>
 				<h1 class="card__title">Is your first time here?</h1>
@@ -20,17 +26,17 @@
 			<div class="form">
 				<?php echo form_open('/register/save'); ?>
 					<div class="form-group">
-						<?php echo form_input(array('name'=>'nickname', 'id'=> 'nickname', 'placeholder'=>'Nickname',  'class'=>'form-control form__input', 'value' => set_value('nickname'))); ?>
+						<?php echo form_input(array('name'=>'nickname', 'id'=> 'nickname', 'placeholder'=>'Nickname', 'autocomplete' => 'off', 'class'=>'form-control form__input', 'value' => set_value('nickname'))); ?>
 						<?php echo form_error('nickname');?>
 					</div>
 
 					<div class="form-group">
-						<?php echo form_input(array('name'=>'email', 'id'=> 'email', 'placeholder'=>'Email',  'class'=>'form-control form__input', 'value' => set_value('email'))); ?>
+						<?php echo form_input(array('name'=>'email', 'id'=> 'email', 'placeholder'=>'Email', 'autocomplete' => 'off', 'class'=>'form-control form__input', 'value' => set_value('email'))); ?>
 						<?php echo form_error('email');?>
 					</div>
 
 					<div class="form-group">
-						<?php echo form_input(array('name'=>'password', 'id'=> 'password', 'placeholder'=>'Password',   'class'=>'form-control form__input', 'value' => set_value('password'))); ?>
+						<?php echo form_input(array('name'=>'password', 'id'=> 'password', 'placeholder'=>'Password', 'autocomplete' => 'off', 'type'=>'password', 'class'=>'form-control form__input', 'value' => set_value('password'))); ?>
 						<?php echo form_error('password');?>
 					</div>
 
