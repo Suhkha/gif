@@ -19,8 +19,18 @@ class Register extends CI_Controller {
 		}else{
 
 			$this->load->model('register_model');
-			$data['query'] = $this->register_model->save();
-			$this->load->view('login');
+
+			$email = $this->input->post('email');
+			$check_email  = $this->register_model->check_email($email);
+
+			if($check_email != ""){
+				$this->data['alert'] = 'We got this email, try with another one! ';
+				$this->load->view('users/register',$this->data);
+			}else{
+				$data['query'] = $this->register_model->save();
+				$this->load->view('login');
+			}
+			
 
 		}
 	}

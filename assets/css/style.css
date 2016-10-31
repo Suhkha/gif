@@ -37,6 +37,24 @@ body {
   float: right;
   margin-right: 5px;
 }
+.gallery__image--author {
+  -webkit-animation-name: change__color;
+          animation-name: change__color;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  background: #9fc957;
+  padding: 10px 0;
+}
+.gallery__image--author span {
+  color: #fff;
+  margin: 0 5px;
+}
 .custom-alert {
   background: #ce0a1a;
   color: #fff;
@@ -325,5 +343,39 @@ body {
   }
   .card__left .card__login span {
     margin-left: 30px;
+  }
+}
+@-webkit-keyframes change__color {
+  0% {
+    background-color: #7887d2;
+  }
+  25% {
+    background-color: #8678d2;
+  }
+  50% {
+    background-color: #d278aa;
+  }
+  75% {
+    background-color: #8678d2;
+  }
+  100% {
+    background-color: #7887d2;
+  }
+}
+@keyframes change__color {
+  0% {
+    background-color: #7887d2;
+  }
+  25% {
+    background-color: #8678d2;
+  }
+  50% {
+    background-color: #d278aa;
+  }
+  75% {
+    background-color: #8678d2;
+  }
+  100% {
+    background-color: #7887d2;
   }
 }

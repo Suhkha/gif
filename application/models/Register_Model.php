@@ -21,6 +21,12 @@ class Register_Model extends CI_Model
 		$this->db->insert('users', $this);
 	}
 
+	/*Revisa que el email de registro sea único*/
+	function check_email($email){
+		$this->db->select('email')->from('users')->where('email',$email);
+		return $this->db->get()->row();
+	}
+
 }
 
 ?>

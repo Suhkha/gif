@@ -30,8 +30,6 @@ class Login extends CI_Controller {
 				$_SESSION['id']        = $user->id;
 				$_SESSION['nickname']  = $user->nickname;
 				$_SESSION['logged_in'] = true;
-				
-				
 
 			}else{
 

@@ -10,6 +10,9 @@
 <body>
 	<main class="container card">
 		<div class="card__right card__right--register"></div>
+		<?php if (isset($alert)) : ?>
+			<div class="custom-alert"><?php echo $alert; ?></div>
+		<?php  endif; ?>
 		<div class="card__left">
 			<div class="main__link">
 				<?php echo anchor('gallery', 'GIFs', array('title' => 'GIFs now')); ?>

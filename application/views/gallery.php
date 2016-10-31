@@ -27,6 +27,9 @@
 									<a href="<?php echo base_url(); ?>/assets/uploads/{{this.source}}" rel="gallery" class="gallery">
 										<img src="<?php echo base_url(); ?>/assets/uploads/{{this.source}}" alt="">
 									</a>
+									<div class="gallery__image--author">
+										<span>Uploaded by {{this.nickname}}</span>
+									</div>
 							</div>
 						{{/api}}
 						</script>
